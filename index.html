@@ -7,31 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form class="pure-form pure-form-stacked myForm">
+    <form class="pure-form pure-form-stacked myForm" action="javascript:void(0);">
         <fieldset>
             <legend>Crushing Your Dreams Mortgage Calculator</legend>
 
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="Email">
+            <label for="balance">Balance</label>
+            <input id="balance" placeholder="Amount the loan is for">
+            <br>
 
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Password">
+            <label for="apr">APR</label>
+            <input id="apr" placeholder="Annual interest rate">
+            <br>
 
-            <label for="state">State</label>
-            <select id="state">
-                <option>AL</option>
-                <option>CA</option>
-                <option>IL</option>
+            <label for="term">Loan Term</label>
+            <input id="term" placeholder="In years">
+            <br>
+
+            <label for="period">Period</label>
+            <select id="period">
+                <option value="monthly">12</option>
+                <option value="bimonthly">6</option>
             </select>
+            <br>
 
-            <label for="remember" class="pure-checkbox">
-                <input id="remember" type="checkbox"> Remember me
-            </label>
-
-            <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+            <button id="calculateBtn" class="pure-button pure-button-primary button-error">Calculate</button>
+            <br>
+            <p id="output"></p>
         </fieldset>
     </form>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

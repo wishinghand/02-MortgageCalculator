@@ -3,3 +3,7 @@
     margin: 0 auto;
     margin-top: 2%;
 }
+
+.button-error{
+    background: rgb(202, 60, 60);
+}
