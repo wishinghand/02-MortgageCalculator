@@ -1,9 +1,15 @@
 $('#calculateBtn').click(function(){
     //getting input values from user
-    var balance = $('#balance').val();
-    var apr = $('#apr').val();
-    var term = $('#term').val();
+    var balance = parseFloat($('#balance').val());
+    var apr = parseFloat($('#apr').val());
+    var term = parseFloat($('#term').val());
     var period = $('#period option:selected').text();
+    console.log(balance)
+
+    if ((isNaN(balance) ) || (isNaN(apr) ) || (isNaN(term) )) {
+        $('#output').text("Please make sure you fill out the fields with only numbers.");
+        return;
+    }
 
     //number of payments
     var paymentsNum = term * period;
@@ -21,5 +27,5 @@ $('#calculateBtn').click(function(){
     var monthlyPayment = Math.round((balance * interestQuotient) * 100) / 100;
 
     //Put monthly payment value in a string on page
-    $('#output').text("Your monthly payment will be $" + monthlyPayment);
+    $('#output').text("Your monthly payment will be $" + monthlyPayment.toFixed(2));
 });
