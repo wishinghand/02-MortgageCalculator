@@ -3,8 +3,9 @@ $('#calculateBtn').click(function(){
     var balance = parseFloat($('#balance').val());
     var apr = parseFloat($('#apr').val());
     var term = parseFloat($('#term').val());
-    var period = $('#period option:selected').text();
-    console.log(balance)
+    var period = $('#period').val();
+    console.log(period)
+
 
     if ((isNaN(balance) ) || (isNaN(apr) ) || (isNaN(term) )) {
         $('#output').text("Please make sure you fill out the fields with only numbers.");
